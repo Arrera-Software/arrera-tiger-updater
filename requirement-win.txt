@@ -1,0 +1,5 @@
+pywin32
+urllib3
+requests
+customtkinter
+pillow
