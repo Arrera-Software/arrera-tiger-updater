@@ -34,7 +34,7 @@ class CTigerUpdater:
 
         # fInstall
         self.__labelInstall = self.__arrTk.createLabel(self.__fInstall,text="Installation en cours",
-                                                       ppolice="Arial",ptaille=15,pstyle="bold")
+                                                       ppolice="Arial",ptaille=30,pstyle="bold")
 
 
         # Affichage des widget
@@ -87,7 +87,7 @@ class CTigerUpdater:
         self.__thread.start()
         self.__fAcceuil.place_forget()
         self.__arrTk.placeCenter(self.__fInstall)
-        self.__rootWin.after(100, self.__checkInstall)
+        self.__rootWin.after(200, self.__checkInstall)
         return True
 
     def __checkInstall(self):
@@ -95,7 +95,7 @@ class CTigerUpdater:
             text = self.__labelInstall.cget("text")
             newText = text + "."
             self.__labelInstall.configure(text=newText)
-            self.__rootWin.after(100, self.__checkInstall)
+            self.__rootWin.after(200, self.__checkInstall)
         else:
             mbox.showinfo("Information", "Installation terminée avec succès.")
             self.__rootWin.destroy()
